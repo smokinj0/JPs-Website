@@ -10,7 +10,9 @@ html, body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #fff;
+  
 }
+
 
 body {
   display: flex;
@@ -56,9 +58,9 @@ body {
 main {
   flex: 1 0 auto;
   display: flex;
-  padding: 1rem 10mm; 
+  padding: 1rem 5%; 
   overflow-y: auto; 
-  height: calc(100vh - 120px);
+  
 }
 
 .about-section {
@@ -69,11 +71,13 @@ main {
   justify-content: center;
   padding: 2rem 0;
   position: relative;
-  min-height: 80vh;
+  min-height: 0;
+  height: auto;
+
 }
 
 .about-container {
-  width: 100%;
+  width: 90%;
   max-width: 1200px; 
   display: flex;
   flex-direction: row;
@@ -212,17 +216,9 @@ footer {
   text-align: center;
   padding: 0.6rem 1rem;
   flex-shrink: 0; 
-  min-height: 40px;
+ 
 }
 
-
-#back-to-top:hover {
-  background-color: #2980b9;
-}
-
-#back-to-top.show {
-  display: block;
-}
 
 @media (max-width: 1200px) {
   main {
