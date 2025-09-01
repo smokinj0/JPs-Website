@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background:   black; 
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #fff;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: white;
+    background-color: #2c3e50;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover ,
+.nav-links a.active {
+  color: #3498db;
+}
+
+
+/* Hero section */
+.hero {
+    color:white;
+    background-color: black;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.hero-container h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero-container p {
+    font-size: 1.2rem;
+    color: White;
+}
+
+/* Clients section */
+.clients-section {
+    padding: 2rem;
+}
+
+.clients-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Client cards */
+.hero-card, .client-card {
+    background:   #2c3e50;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-card h3, .client-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+    color: white;;
+}
+
+.hero-card p, .client-card p {
+    margin-bottom: 1rem;
+    color: #white;
+}
+
+/* Uniform image sizing */
+.hero-card img, 
+.client-card img,
+.before-after {
+    width: 300px; 
+    height: 300px; 
+    object-fit: cover; 
+    border-radius: 4px;
+    margin: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.before-after {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background-color: #2c3e50;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-card img, 
+    .client-card img,
+    .before-after {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        margin: 0.5rem 0;
+    }
+}
