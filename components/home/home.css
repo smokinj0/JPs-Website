@@ -83,6 +83,19 @@ main {
   flex-direction: column;
 }
 
+.hero-text h1 {
+            font-size: 3rem; 
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: #3498db; 
+        }
+
+        .hero-text p {
+            font-size: 1.3rem; 
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
 .hero-image {
   height: 100%;
   overflow: hidden;
