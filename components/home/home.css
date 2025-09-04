@@ -129,8 +129,9 @@ footer {
   color: #fff;
   text-align: center;
   padding: 0.6rem 1rem;
-  font-size: 0.85rem;
+  flex-shrink: 0; 
 }
+
 
 /* MOBILE */
 @media (max-width: 768px) {

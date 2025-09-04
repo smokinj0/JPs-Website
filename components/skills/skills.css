@@ -53,7 +53,7 @@ html, body {
 }
 
 .hero {
-  background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('../../assets/images/hero-skills.avif');
   background-size: cover;
   background-position: center;
   color: white;
@@ -213,11 +213,13 @@ html, body {
 
 
 footer {
-  background: #2c3e50;
-  color: white;
+  background-color: #2c3e50;
+  color: #fff;
   text-align: center;
-  padding: 2rem 0;
+  padding: 0.6rem 1rem;
+  flex-shrink: 0; 
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
