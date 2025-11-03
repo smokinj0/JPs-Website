@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "components",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/home/home.html",
+        "type": 301
+      }
+    ]
+  }
+}

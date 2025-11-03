@@ -1,0 +1,43 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+}
+
+type Website @table {
+  user: User!
+  name: String!
+  url: String!
+  createdAt: Timestamp!
+  isPublished: Boolean!
+  description: String
+  theme: String
+}
+
+type Page @table {
+  website: Website!
+  title: String!
+  slug: String!
+  order: Int!
+  content: String!
+  createdAt: Timestamp!
+  featuredImage: String
+}
+
+type Media @table {
+  user: User!
+  filename: String!
+  url: String!
+  fileType: String!
+  createdAt: Timestamp!
+  altText: String
+}
+
+type Analytic @table {
+  website: Website!
+  eventType: String!
+  timestamp: Timestamp!
+  ipAddress: String
+  userAgent: String
+}

@@ -53,7 +53,7 @@ html, body {
 }
 
 .hero {
-  background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('../../assets/images/hero-skills.avif');
+  background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('../assets/images/hero-skills.avif');
   background-size: cover;
   background-position: center;
   color: white;
@@ -221,24 +221,47 @@ footer {
 }
 
 
-/* Responsive Design */
+/* Responsive design */
 @media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-card img, 
+    .client-card img,
+    .before-after {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+  *main {
+    padding: 1.5rem;
   }
-  
-  .nav-links li {
-    margin: 0.5rem 0;
+
+  .logo {
+    font-size: 1.2rem;
   }
-  
-  .hero h1 {
-    font-size: 2rem;
+
+  .nav-links a {
+    font-size: 0.9rem;
   }
-  
-  .skills-grid,
-  .services-grid,
-  .testimonials-grid {
-    grid-template-columns: 1fr;
+
+  .about-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
   }
 }

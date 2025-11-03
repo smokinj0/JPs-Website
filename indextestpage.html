@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPs Website</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f4; }
+        h1 { color: #333; text-align: center; }
+        p { text-align: center; color: #666; }
+        button { padding: 10px 20px; background: #4285f4; color: white; border: none; cursor: pointer; margin: 0 5px; border-radius: 5px; }
+        button:hover { background: #3367d6; }
+        #output { margin-top: 20px; padding: 10px; border: 1px solid #ddd; background-color: #fff; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to JPs Website</h1>
+    <p>Public-facing: JPs Website | Support: j77pye@gmail.com</p>
+    
+    <div style="text-align: center; margin: 20px 0;">
+        <button id="signInBtn">Sign In with Google</button>
+        <button id="signOutBtn" style="display: none;">Sign Out</button>
+    </div>
+    
+    <div id="output">User: Not signed in</div>
+
+    <!-- Load Firebase SDK from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyCVnqPeDkwaQDTsqBtz8vebmiqptSIf7fo",
+        authDomain: "web-assessment-2.firebaseapp.com",
+        projectId: "web-assessment-2",
+        storageBucket: "web-assessment-2.firebasestorage.app",
+        messagingSenderId: "881953900315",
+        appId: "1:881953900315:web:75d3f28dd2e4f53ecc35be"
+      };
+
+      const app = firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      const signInBtn = document.getElementById('signInBtn');
+      const signOutBtn = document.getElementById('signOutBtn');
+      const output = document.getElementById('output');
+
+      async function signIn() {
+        try {
+          const provider = new firebase.auth.GoogleAuthProvider();
+          const result = await auth.signInWithPopup(provider);
+          console.log('Signed in:', result.user);
+        } catch (error) {
+          console.error('Sign-in error:', error);
+          output.textContent = 'Sign-in failed: ' + error.message;
+        }
+      }
+
+      async function signOutUser() {
+        try {
+          await auth.signOut();
+        } catch (error) {
+          console.error('Sign-out error:', error);
+        }
+      }
+
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          output.innerHTML = `<strong>User:</strong> ${user.displayName} (${user.email})`;
+          signInBtn.style.display = 'none';
+          signOutBtn.style.display = 'inline-block';
+        } else {
+          output.textContent = 'User: Not signed in';
+          signInBtn.style.display = 'inline-block';
+          signOutBtn.style.display = 'none';
+        }
+      });
+
+      signInBtn?.addEventListener('click', signIn);
+      signOutBtn?.addEventListener('click', signOutUser);
+    </script>
+</body>
+</html>

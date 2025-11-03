@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/smokinj0/JPs-Website/issues"
   },
-  "homepage": "https://github.com/smokinj0/JPs-Website#readme"
+  "homepage": "https://github.com/smokinj0/JPs-Website#readme",
+  "dependencies": {
+    "firebase": "^12.4.0"
+  }
 }

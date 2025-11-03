@@ -96,7 +96,7 @@ body {
 
 .hero-card p, .client-card p {
     margin-bottom: 1.5rem;
-    color: #white;
+    color: white;
 }
 
 .hero-card,
@@ -149,4 +149,30 @@ footer {
         max-height: 300px;
         margin: 0.5rem 0;
     }
+}
+
+@media (max-width: 480px) {
+  *main {
+    padding: 1.5rem;
+  }
+
+  .hero-container h1 {
+    font-size: 1.8rem ;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+  }
 }

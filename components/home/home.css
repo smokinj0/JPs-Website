@@ -139,14 +139,20 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
   .hero-image {
     order: -1;
     max-height: 40vh;
   }
 
   .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
   }
 
   .hero h1 {
