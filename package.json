@@ -19,5 +19,8 @@
   "homepage": "https://github.com/smokinj0/JPs-Website#readme",
   "dependencies": {
     "firebase": "^12.4.0"
+  },
+  "devDependencies": {
+    "first-input-delay": "^0.1.3"
   }
 }

@@ -1,8 +1,11 @@
+
+
+
 {
-  "apiKey": "AlzaSyCVnqPeDwaQDT5gBzt8vebmipTSIf7o",
+  "apiKey": "AIzaSyCVnqPeDkwaQDTsqBtz8vebmiqptSIf7fo",
   "authDomain": "web-assessment-2.firebaseapp.com",
   "projectId": "web-assessment-2",
-  "storageBucket": "web-assessment-2.appspot.com",
-  "messagingSenderId": "881959300315",
-  "appId": "1:881959300315:web:abcdef123456"
+  "storageBucket": "web-assessment-2.firebasestorage.app",
+  "messagingSenderId": "881953900315",
+  "appId": "1:881953900315:web:87caeb8081b65172cc35be"
 }

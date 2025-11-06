@@ -85,8 +85,57 @@
     </section>
   </main>
 
+  <button onclick="topFunction()" id="backToTopBtn" title="Go to top">&#9650;</button>
+  <script src="clients.js"></script>
+
+
+
+<!-- Admin Login Box (centered, blue style) -->
+<!--<div id="admin-login-box" style="
+  width: 300px;
+  margin:40px auto 20px auto;
+  padding:24px;
+  background-color:#1976d2;
+  color:white;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  text-align:center;">
+  <h3 style="margin-bottom:20px;">Admin Login</h3>
+  <input type="password" id="admin-pass" placeholder="Enter admin password" style="padding:5px; width:80%; margin-bottom:10px;">
+  <br />
+  <button id="login-btn" style="background:#2196f3;color:white;padding:8px 24px;border:none;border-radius:5px;cursor:pointer">Login to Edit</button>
+</div>
+
+* Add button and display area (shown only after login) 
+<div id="admin-crud-panel" style="display:none; text-align:center;">
+  <button onclick="addNewClient()" style="background:#1976d2;color:white;padding:8px 24px;margin:20px 0 0 0;border:none;border-radius:5px;cursor:pointer">Add New Client</button>
+</div> -->
+
+<div id="admin-login-box">
+  <input type="email" id="admin-email" placeholder="Admin Email" />
+  <input type="password" id="admin-pass" placeholder="Password" />
+  <button id="login-btn">Login to Edit</button>
+</div>
+<div id="admin-crud-panel" style="display:none; text-align:center;">
+  <button onclick="addNewClient()">Add New Client</button>
+</div>
+
+<div class="clients-container"></div>
+
+
+<script type="module" src="../assets/firebase-init.js"></script>
+<script type="module" src="../clients/admin-crud.js"></script>
+
+
+
+
   <footer>
     <p>&copy; 2025 JP's Fitness.</p>
   </footer>
+
+  
+<script src="clients.js"></script>
+
+
 </body>
 </html>
