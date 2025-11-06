@@ -1,9 +1,9 @@
 // firebase.js — FIXED for browser use
-let app, db;
+let app, auth, db;
 
 // Load config and initialize Firebase
 async function initFirebase() {
-  if (app) return { app, db, };
+  if (app) return { app, db, auth };
 
   // Fetch config from JSON file
   const response = await fetch('./assets/firebase-config.json');

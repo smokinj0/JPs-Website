@@ -1,34 +1,47 @@
-import { db } from "../assets/firebase-init.js";
+// === IMPORTS ===
+import { db, auth } from "../assets/firebase-init.js";
 import {
   collection, addDoc, deleteDoc, doc,
   onSnapshot, query, orderBy
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-const ADMIN_PASSWORD = "josh123";
+
+// === GLOBALS ===
 const testimonialsRef = collection(db, "testimonials");
 const container = document.querySelector(".clients-container");
-
-const loginBox = document.getElementById("admin-login-box");
-const loginInput = document.getElementById("admin-pass");
-const loginBtn = document.getElementById("login-btn");
-const crudPanel = document.getElementById("admin-crud-panel");
-
 let isAdmin = false;
 
-// --- LOGIN ----
-loginBtn.addEventListener("click", () => {
-  if (loginInput.value === ADMIN_PASSWORD) {
-    isAdmin = true;
-    loginBox.style.display = "none";
-    crudPanel.style.display = "block";
-    loadClients();
-    alert("✅ Admin mode enabled!");
-  } else {
-    alert("❌ Wrong password!");
-  }
+
+// === LOGIN LOGIC ===
+document.addEventListener("DOMContentLoaded", () => {
+  const loginBtn = document.getElementById("login-btn");
+  const loginBox = document.getElementById("admin-login-box");
+  const crudPanel = document.getElementById("admin-crud-panel");
+
+  // Load testimonials immediately (for all users)
+  loadClients();
+
+  loginBtn.addEventListener("click", () => {
+    const email = document.getElementById('admin-email').value.trim();
+    const password = document.getElementById('admin-pass').value.trim();
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        isAdmin = true;
+        alert("✅ Logged in as admin!");
+        loginBox.style.display = "none";
+        crudPanel.style.display = "block";
+        loadClients(); // reload with delete buttons
+      })
+      .catch((error) => {
+        alert("❌ Login failed: " + error.message);
+      });
+  });
 });
 
-// --- DISPLAY & CRUD ---
+
+// === DISPLAY & CRUD ===
 function loadClients() {
   const q = query(testimonialsRef, orderBy("order", "asc"));
   onSnapshot(q, (snap) => {
